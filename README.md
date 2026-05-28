@@ -108,8 +108,7 @@ DEPLOY_WEBHOOK_VENDURE_WORKER=https://yourdokploy.io/api/deploy/ajkldlkslKKLs
   * Only after setting the A record should you set the domain in Dokploy
 * Go to `vendure.yourcustomdomain.io/dashboard` and verify that the Vendure Dashboard is accessible.
 * From the Deployments tab, copy the webhook URL, and set it in your Github repository secrets as `DEPLOY_WEBHOOK_VENDURE_API`.
-* Follow the steps in the [Dokploy Documentation](https://docs.dokploy.com/docs/core/applications/zero-downtime) and set the health check path to `/health`.
-
+  
 ### Vendure Worker
 
 Create a new service named `Vendure Worker` and repeat the same steps for the Vendure Worker, with a few exceptions:
