@@ -149,25 +149,7 @@ These are just sample values, and your values depend on the VPS and the resource
 
 ## Alerts and Notifications
 
-* Use an uptime monitoring service to monitor `/health` for both the Vendure API and Worker.
-* Set up resource monitoring with your VPS provider to alert you if the total memory or CPU usage exceeds the limits you have set.
-* Alternatively, you can use the `DokployHealthCheckStrategy` to include CPU, memory and disk usage in the health check:
-
-```ts
-import { DokployHealthCheckStrategy } from './dokploy-health-strategy';
-
-const vendureConfig = {
-  systemOptions: {
-    healthChecks: [
-      new DokployHealthCheckStrategy({
-        maxDiskPercent: 70,
-        maxCpuPercent: 80,
-        maxMemoryPercent: 70,
-        apiKey: process.env.DOKPLOY_APIKEY, // Get this from your Dokploy project
-        dokployHost: process.env.DOKPLOY_HOST, // E.g. "dokploy.mydomain.com" (without https:// and trailing slash)
-      }),
-    ],
-  },
-}
+* The repo includes a custom health check plugin, that includes checking if worker and storefront are live.
+* Use an uptime monitoring service to monitor `/health-check` for both the Vendure API.
 
 ```
