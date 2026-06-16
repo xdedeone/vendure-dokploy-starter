@@ -99,7 +99,7 @@ DEPLOY_WEBHOOK_VENDURE_WORKER=https://yourdokploy.io/api/deploy/ajkldlkslKKLs
 * Copy the variables from the `.env` file from your repository, and paste them under Environment in the Vendure API application in Dokploy.
 * Go to the `Advanced` tab.
 * Create a volume and select Volume mount (not bind mount).
-* Set `vendure_assets` as name, and `/usr/src/app/assets` as mount path and click `Save`.
+* Set `vendure_files` as name, and `/usr/src/app/vendure_files` as mount path and click `Save`.
 * Click `Save` to deploy the service.
 * Set the run command to `npm run start:server`
 * Go back to the `General` tab and click `Deploy`.
@@ -140,7 +140,7 @@ These are just sample values, and your values depend on the VPS and the resource
 
 * Create an S3 compatible destination in Dokploy. For example [Google Cloud Storage](https://docs.dokploy.com/docs/core/cloud-storage).
 * Configurate automated backups for the PostgreSQL database: https://docs.dokploy.com/docs/core/databases/backups
-* Configure volume backups for Vendure's assets: https://docs.dokploy.com/docs/core/volumes/backups. You only need to backup `vendure_assets` once for the Vendure API , not the worker.
+* Configure volume backups for Vendure's assets: https://docs.dokploy.com/docs/core/volumes/backups. You only need to backup `vendure_files` once for the Vendure API , not the worker.
 
 ## Load Testing
 
