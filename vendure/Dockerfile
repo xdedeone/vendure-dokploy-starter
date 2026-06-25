@@ -8,4 +8,4 @@ COPY . .
 RUN npm run build
 
 # This makes sure traffic is only sent to this container when its healthy (vendure started)
-HEALTHCHECK --interval=1m --timeout=5s --start-interval=1s --start-period=20s --retries=3 CMD curl -f http://localhost:3000/shop-api?query=%7B__typename%7D || exit 1
+HEALTHCHECK --interval=1m --timeout=5s --start-interval=1s --start-period=20s --retries=3 CMD curl -f http://localhost:3000/health || exit 1
