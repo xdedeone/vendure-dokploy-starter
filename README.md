@@ -102,6 +102,7 @@ DEPLOY_WEBHOOK_VENDURE_WORKER=https://yourdokploy.io/api/deploy/ajkldlkslKKLs
 * Set `vendure_files` as name, and `/usr/src/app/vendure_files` as mount path and click `Save`.
 * Click `Save` to deploy the service.
 * Set the run command to `npm run start:server`
+* Go to `Swarm settings` and set restart policy to `any`
 * Go back to the `General` tab and click `Deploy`.
 * Set a custom domain for the service:
   * In your DNS provider, create an A record that points to the IP address of your VPS, e.g. `vendure.mydomain.com`
